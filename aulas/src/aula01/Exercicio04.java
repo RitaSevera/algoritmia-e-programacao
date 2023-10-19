@@ -9,10 +9,14 @@ public class Exercicio04 {
         Scanner input = new Scanner (System.in);
 
         final double PI = 3.14;
-        double raio, perimetro;
+        double raio, area;
 
+        System.out.println("Coloque o raio da circunferência: ");
+        raio = input.nextDouble();
 
+        area = PI * (raio * raio);
+
+        System.out.println("A área da circunferência é :" + area);
     }
-
 
 }
