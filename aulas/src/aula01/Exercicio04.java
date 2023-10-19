@@ -1,0 +1,18 @@
+package aula01;
+
+import java.util.Scanner;
+
+public class Exercicio04 {
+
+    public static void main(String[] args) {
+
+        Scanner input = new Scanner (System.in);
+
+        final double PI = 3.14;
+        double raio, perimetro;
+
+
+    }
+
+
+}
