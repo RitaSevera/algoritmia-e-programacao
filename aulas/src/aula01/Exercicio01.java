@@ -6,7 +6,7 @@ public class Exercicio01 {
 
     public static void main(String[] args) {
 
-        // Instanciar o Scanner
+        // Instanciar o Scanner (dizer que vai ter o input do utilizador)
         Scanner input = new Scanner (System.in);
 
         // Declarar variávies

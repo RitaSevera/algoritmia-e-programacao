@@ -8,6 +8,7 @@ public class Exercicio04 {
 
         Scanner input = new Scanner (System.in);
 
+        // final double porque é uma constante
         final double PI = 3.14;
         double raio, area;
 

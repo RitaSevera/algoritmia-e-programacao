@@ -8,6 +8,7 @@ public class Exercicio05 {
 
         Scanner input = new Scanner(System.in);
 
+        //Não era preciso ter distinguido as médias aqui, porque são contas distintas, pq não preciso do valor que dá para o resto do problema
         double num1, num2, num3, mediaA, mediaP;
 
         System.out.print("Insira o primeiro número: ");
@@ -20,7 +21,6 @@ public class Exercicio05 {
         num3 = input.nextDouble();
 
         mediaA = (num1 + num2 + num3) / 3;
-
         System.out.println("A média aritmética é: " + mediaA);
 
         //Esta formúla deveria de ser: (num1 * 0.2 + num2 * 0.3 + num3 * 0.5) / (0.2 + 0.3 + 0.5);

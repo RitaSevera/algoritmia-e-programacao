@@ -23,7 +23,8 @@ public class Exercicio07 {
         valor = (preco1 + preco2 + preco3) - desc;
         System.out.println("O preço final é: " + valor);
 
-
+        //Dá para fazer só com 1 variável (para além dos preços)
+        //total = (preco1 + preco2 + preco3) * 0.9
     }
 
 }
