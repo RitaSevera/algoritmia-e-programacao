@@ -13,7 +13,7 @@ public class Exercicio09 {
         num2 = input.nextInt();
         num3 = input.nextInt();
 
-        if (num1 < num2 && num1 < num3){
+        if (num1 < num2 && num1 < num3){ // quer dizer que o valor 1 é menor que o 2 e que o 3
             System.out.println("O menor número escolhido foi:" + num1);
         }
         if (num2 < num1 && num2 < num3){

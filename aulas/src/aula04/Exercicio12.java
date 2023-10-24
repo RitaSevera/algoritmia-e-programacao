@@ -30,4 +30,17 @@ public class Exercicio12 {
         }
     }
 }
+// podia fazer com switch
+//switch (menu){
+//case 1:
+// sout ("escolheu o menu 1");
+//break;
+//case 2:
+// sout ("Escolheu o menu 2");
+//break;
+//case 4:
+//break;
+//defautl
+// sout ("Operação inválida")
+
 

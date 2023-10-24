@@ -16,8 +16,9 @@ public class Exercicio08 {
         nota3 = input.nextInt();
 
         mediaP = (nota1 * 0.25 + nota2 * 0.35 + nota3 * 0.40);
+        System.out.println("Média ponderada" + mediaP); // isto se eu quiser que apareça qual a média, mas não era necessário este passo
 
-        //mediaP = (num1 * 0.2 + num2 * 0.3 + num3 * 0.5);
+        //mediaP = (num1 * 0.25 + num2 * 0.35 + num3 * 0.4);
         if (mediaP >= 9.5) {
             System.out.println(mediaP + " Está aprovado! Continue com a sua evolução!");
         } else {

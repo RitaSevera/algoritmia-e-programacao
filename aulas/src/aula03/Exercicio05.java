@@ -13,9 +13,9 @@ public class Exercicio05 {
         num2 = input.nextInt();
 
         if (num1 > num2){
-            System.out.println(num2 + " " + num1);
+            System.out.println("Número menor: " + num2 + " " + "Número maior: " + num1);
         } else {
-            System.out.println("Número menor " + num1 + " Número maior " + num2);
+            System.out.println("Número menor: " + num1 + " Número maior: " + num2);
         }
     }
 }

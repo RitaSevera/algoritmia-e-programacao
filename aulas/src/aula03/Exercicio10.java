@@ -6,10 +6,6 @@ public class Exercicio10 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        //Escreva um programa que leia dois números reais e pergunte ao utilizador qual a operação aritmética que quer
-        // realizar e apresente o resultado. O utilizador deve responder usando o símbolo da operação (exemplo: para fazer
-        //a soma, o utilizador deve escrever ‘+’). Se for inválido apresente erro
-
         int num1, num2, result;
         String oper;
 
@@ -18,7 +14,7 @@ public class Exercicio10 {
         num2 = input.nextInt();
         System.out.println("Que operação aritmética pretende fazer? ");
         oper = input.next();
-
+// se eu fosse pôr IF, tinha que pôr equals.
         switch (oper) {
             case "+":
                 result = num1 + num2;

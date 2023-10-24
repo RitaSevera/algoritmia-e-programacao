@@ -6,13 +6,14 @@ public class Exercicio03 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        int salario;
+        double salario; //podia ter criado variável taxa
 
         System.out.println("Coloque o seu salário anual");
-        salario = input.nextInt();
+        salario = input.nextDouble();
 
         if (salario <= 15000){
-            System.out.println("Paga 20% de imposto: " + (salario * 0.2));
+            //se tivesse a variável taxa punha a conta aqui: taxa=salario*0.2;
+            System.out.println("Paga 20% de imposto: " + (salario * 0.2));//aqui punha + taxa e não a conta que fiz
         }
         if (salario > 15000 && salario <= 20000){
             System.out.println("Paga 30% de imposto: " + (salario * 0.3));
