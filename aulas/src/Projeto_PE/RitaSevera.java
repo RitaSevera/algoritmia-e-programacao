@@ -9,9 +9,8 @@ public class RitaSevera {
 
     /**
      * Método que retorna o número de linhas totais de um ficheiro
-     *
      * @param caminhoFicheiro Caminho do Ficheiro
-     * @return Número de Linhas Totais
+     * @return Número de linhas totais do ficheiro
      * @throws FileNotFoundException Caso o ficheiro não seja encontrado
      */
     public static int contarLinhas (String caminhoFicheiro) throws FileNotFoundException {
@@ -30,9 +29,8 @@ public class RitaSevera {
 
     /**
      * Método que retorna o número de colunas totais de um ficheiro
-     *
      * @param caminhoFicheiro Caminho do Ficheiro
-     * @return Número de Colunas Totais
+     * @return Número de colunas totais do ficheiro
      * @throws FileNotFoundException Caso o ficheiro não seja encontrado
      */
     public static int contarColunas (String caminhoFicheiro, String delimitador) throws FileNotFoundException {
@@ -51,9 +49,8 @@ public class RitaSevera {
 
     /**
      * Método que armazena numa matriz o conteudo de um ficheiro
-     *
      * @param caminhoFicheiro Caminho do Ficheiro
-     * @return Matriz String[][] preenchida com o conteudo
+     * @return Matriz String[][] preenchida com o conteudo do ficheiro
      * @throws FileNotFoundException Caso o ficheiro não seja encontrado
      */
     public static String [][] lerFicheiroMatriz (String caminhoFicheiro) throws FileNotFoundException {
@@ -83,7 +80,6 @@ public class RitaSevera {
 
     /**
      * Método para imprimir uma matriz na consola
-     *
      * @param matriz Matriz a imprimir
      */
     public static void imprimirMatrizConsola(String[][] matriz) { //usar no menu admin - ex: 1
@@ -96,7 +92,11 @@ public class RitaSevera {
         }
     }
 
-    public static void menuCliente () {
+    /**
+     * Método para imprimir um menu
+     * @param matriz Matriz a imprimir
+     */
+    public static void menuCliente (String[][] matriz) {
 
         Scanner input = new Scanner(System.in);
         int opcao, telemovel;
@@ -105,7 +105,7 @@ public class RitaSevera {
         do {
             System.out.println("\nSelecione o que pretende fazer");
             System.out.println("1 - Registar-se como nosso cliente");
-            System.out.println("2 - Ver quantos lugares estacionamente estão disponíveis na nossa loja física do Porto");
+            System.out.println("2 - Ver quantos lugares de estacionamente estão disponíveis na nossa loja física do Porto");
             System.out.println("3 - Imprimir todos os títulos de jogos existentes na loja");
             System.out.println("4 - Segundo uma editora à sua escolha, apresentaremos todas as categorias e respetivos jogos");
             System.out.println("5 - Sair");
@@ -120,7 +120,7 @@ public class RitaSevera {
                     telemovel = input.nextInt();
                     System.out.print("Insira o seu email: ");
                     email = input.next();
-                    System.out.print("Obrigada pelo seu registo: " +  " " + nome + " " + telemovel + " " + email );
+                    System.out.print("Obrigada pelo seu registo na GameStart: " +  " " + nome + " " + telemovel + " " + email );
                     break;
                 case 2:
                     System.out.println("Os lugares disponíveis no nosso parque de estacionamento: ");
@@ -128,10 +128,12 @@ public class RitaSevera {
                     break;
                 case 3:
                     System.out.println("Todos os títulos de jogos: ");
-
+                    todosJogos(matriz);
                     break;
                 case 4:
-                    System.out.println("Categorias e respetivos jogos");
+                    System.out.println("!!!ERRO!!!");
+                    System.out.println("Tente novamente no final do curso...");
+                    break;
                 case 5:
                     System.out.println("Até à próxima!");
                     break;
@@ -140,18 +142,20 @@ public class RitaSevera {
             }
         } while (opcao != 5);
     }
-
-    public static void menuAdministrador () throws FileNotFoundException {
+    /**
+     * Método para imprimir um menu
+     * @param matriz Matriz a imprimir
+     */
+    public static void menuAdministrador(String[][] matriz) {
         Scanner input = new Scanner(System.in);
-        String[][] matriz = lerFicheiroMatriz("FicheiroProjeto/GameStart_V2.csv");
 
         int optar;
 
         do {
-            System.out.println("Selecione o que pretende fazer: ");
+            System.out.println("\nSelecione o que pretende fazer: ");
             System.out.println("1 - Imprimir conteúdo do ficheiro");
             System.out.println("2 - Saber a quantidade de vendas que foram executadas e o seu valor total");
-            System.out.println("3 - Saber p total do lucro");
+            System.out.println("3 - Saber o total do lucro");
             System.out.println("4 - Imprimir todas as informações associadas a um cliente específico");
             System.out.println("5 - Ver qual é o jogo mais caro e os clientes que o compraram");
             System.out.println("6 - Sair");
@@ -163,8 +167,8 @@ public class RitaSevera {
                     imprimirMatrizConsola(matriz);
                     break;
                 case 2:
-                    System.out.println("Quantidade de vendas e o valor total: ");
-                    totalVendas(matriz);
+                    System.out.println("Quantidade de vendas: " + matriz.length);
+                    System.out.println("Valor total das vendas: " + totalVendas(matriz));
                     break;
                 case 3:
                     System.out.println("Total de lucro: ");
@@ -187,12 +191,10 @@ public class RitaSevera {
     /**
      * Método que avalia números triangulares múltiplos de 5
      * @param num número a ser avaliado
-     * @return os números de 0 até 121 que sejam triangulares e múltiplos de 5
      */
-    public static void lugaresVazios (int num) { //Delcaro função e passo num como parâmetro
+    public static void lugaresVazios(int num) { //Delcaro função e passo num como parâmetro
 
         int soma = 0, contador = 1;
-        num = 121;
 
         while (soma < num) { //enquanto a soma for menor que 121 o ciclo continua
             soma = soma + contador;// adiciona o valor atual da soma de contador à soma
@@ -202,25 +204,31 @@ public class RitaSevera {
             }
         }
     }
-    public static void todosJogos (String matriz [][],String jogo) {
 
+    /**
+     * Método que avalia o título de jogos do ficheiro
+     * @param matriz Matriz a imprimir
+     */
+    public static void todosJogos(String[][] matriz) {
         for (int linha = 0; linha < matriz.length; linha++) {
-
-            if (matriz[linha][7].equals(jogo)) {
-                System.out.println("Título do jogo: " + matriz[linha][7]);
-            }
+            System.out.println("Título do jogo: " + matriz[linha][7]);
         }
     }
 
-    public static void totalVendas (String matriz [][]) {
+    /**
+     * Método que armazena numa matriz o total das vendas
+     * @param matriz Matriz a imprimir
+     * @return a soma das vendas
+     */
+    public static double totalVendas(String[][] matriz) {
 
-        int soma = 0;
+        double soma = 0;
 
         for (int linha = 0; linha < matriz.length; linha++ ) {
-            String[] vendas = matriz[linha][0].split("-");
-            soma = Integer.parseInt(soma + matriz[linha][0]);
-            }
+            soma = Double.parseDouble((soma + matriz[linha][8]));
         }
+        return soma;
+    }
     public static void main(String[] args) throws FileNotFoundException {
         Scanner input = new Scanner(System.in);
         String[][] matriz = lerFicheiroMatriz("FicheiroProjeto/GameStart_V2.csv");
@@ -229,7 +237,7 @@ public class RitaSevera {
         int password = 12345, passwordUtilizador, contador = 0;
 
         do {
-            System.out.println("Bem-vindo! Selecione o tipo de utilizador: 1 - Administrador || 2 - Cliente ");
+            System.out.println("Bem-vindo à GameStart! Selecione o tipo de utilizador: 1 - Administrador || 2 - Cliente ");
             escolha = input.nextInt();
 
             switch (escolha){
@@ -242,19 +250,21 @@ public class RitaSevera {
                             System.out.println("Password errada.");
                         }
                     } while (passwordUtilizador != password && contador < 3 );
-                    System.out.println("Excedeu as tentativas");
+
                     if (passwordUtilizador == password) {
                         System.out.println("Inseriu a password corretamente");
-                        menuAdministrador();
+                        menuAdministrador(matriz);
+                    } else {
+                        System.out.println("Excedeu as tentativas");
                     }
                     break;
                 case 2:
                     System.out.println("Seja bem-vindo!");
-                    menuCliente();
+                    menuCliente(matriz);
                     break;
                 default:
                     System.out.println("Operação inválida.\nEscolha entre administrador e cliente\n");
             }
         } while (escolha != 1 && escolha !=2);
-}
+    }
 }
