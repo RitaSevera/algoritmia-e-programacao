@@ -200,7 +200,7 @@ public class RitaSevera {
      * Método que avalia números triangulares múltiplos de 5
      * @param num número a ser avaliado
      */
-    public static void lugaresVazios(int num) { //Delcaro função e passo num como parâmetro
+    public static void lugaresVazios(int num) {
 
         int soma = 0, contador = 1;
 
@@ -219,21 +219,23 @@ public class RitaSevera {
      */
     public static void todosJogos(String[][] matriz) {
 
+        String jogoAtual;
         int contador = 0; //conta quantas vezes o jogo aparece na matriz
 
         for (int linha = 0; linha < matriz.length; linha++) { //percorre todas as linhas da matriz
-            for (int indice = 0; indice < matriz.length; indice++) { //volta a percorrer todas as linhas para comparar o título do jogo que tem com todos os outros
-                if (matriz[linha][7].equals(matriz[indice][7])) { // se o título for igual a outro título noutra linha, o contador aumenta
+            jogoAtual = matriz[linha][7]; //a minha variável jogoAtual vai ser igual à primeir linha da coluna 7(no primeiro loop, depois aumenta para linha 2...)
+            for (int indice = 0; indice < linha; indice++) { //volta a percorrer as linhas para comparar o título do jogo que tem com as linhas anteriores
+                if (jogoAtual.equals(matriz[indice][7])) { // se o título for igual a outro título noutra linha, o contador aumenta
                     contador++;
                 }
             }
-            if (contador == 1) { // se o contador for igual a 1, é sinal que o título só aparece uma vez na matriz
-                System.out.println("Título do jogo: " + matriz[linha][7]); // sendo assim, o título é impresso
+            if (contador == 0) { // se o contador for igual a 0, é sinal que o título não repete
+                System.out.println("Título do jogo: " + jogoAtual); // sendo assim, o título é impresso
             }
         }
     }
     /**
-     * Método que armazena numa matriz o total das vendas
+     * Método que calcula o total das vendas
      * @param matriz conteúdo
      * @return a soma das vendas
      */
@@ -249,13 +251,13 @@ public class RitaSevera {
     }
 
     /**
-     * Método que armazena numa matriz o lucro das vendas
+     * Método que calcula o lucro das vendas
      * @param matriz conteúdo
      * @return o lucro das vendas
      */
     public static double lucro (String [][] matriz) {
 
-        double vendas = totalVendas(matriz);
+        double vendas = totalVendas(matriz); //para usar o valor que foi calculado
         double lucro;
 
         lucro = vendas*0.20;
@@ -270,8 +272,8 @@ public class RitaSevera {
     public static void idCliente (String [][] matriz, String idCliente) {
 
         for (int linha = 0; linha < matriz.length; linha++){
-            if (matriz[linha][1].equals(idCliente)) {
-                System.out.println(matriz[linha][2] + " " +  matriz[linha][3] + " " + matriz[linha][4]);
+            if (matriz[linha][1].equals(idCliente)) { //se a linha, coluna 1 for igual ao id cliente
+                System.out.println(matriz[linha][2] + " " +  matriz[linha][3] + " " + matriz[linha][4]); //imprime o nome, contacto e email
                 break;// faço break para ele não imprimir as informações várias vezes
             }
         }
@@ -306,8 +308,8 @@ public class RitaSevera {
     public static void clientesCompraram (String [][] matriz, String jogoCaro) {
 
         for (int linha = 0; linha < matriz.length; linha ++){
-            if (matriz[linha][7].equals(jogoCaro)) {
-                System.out.println(matriz[linha][2]);
+            if (matriz[linha][7].equals(jogoCaro)) { //se a linha, coluna 7 for igual ao jogo mais caro
+                System.out.println(matriz[linha][2]); //imprimo o nome do cliente
             }
         }
 
