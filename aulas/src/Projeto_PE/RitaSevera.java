@@ -37,7 +37,7 @@ public class RitaSevera {
         File file = new File(caminhoFicheiro);
         Scanner sc = new Scanner(file);
 
-        int contagemColunas = 0;
+        int contagemColunas;
 
         String linha = sc.nextLine();
         String [] itensLinha = linha.split(delimitador); //estou a dizer que vai dividir sempre que houver ;
@@ -79,7 +79,7 @@ public class RitaSevera {
 
     /**
      * Método para imprimir uma matriz na consola (conteúdo do ficheiro é impresso)
-     * @param matriz Matriz a imprimir
+     * @param matriz contém informações das vendas da empresa (ficheiro)
      */
     public static void imprimirMatrizConsola(String[][] matriz) {
 
@@ -93,21 +93,24 @@ public class RitaSevera {
 
     /**
      * Método para imprimir um menu
-     * @param matriz conteúdo
+     * @param matriz contém informações das vendas da empresa (ficheiro)
      */
     public static void menuCliente (String[][] matriz) {
 
         Scanner input = new Scanner(System.in);
-        int opcao, telemovel;
-        String nome, email;
+        int opcao;
+        String nome, email, telemovel, editora;
 
         do {
-            System.out.println("\nMenu Cliente");
-            System.out.println("1 - Registar-se como nosso cliente");
-            System.out.println("2 - Ver quais os lugares de estacionamente que estão disponíveis na nossa loja física do Porto");
-            System.out.println("3 - Imprimir todos os títulos de jogos existentes na loja");
-            System.out.println("4 - Segundo uma editora à sua escolha, apresentaremos todas as categorias e respetivos jogos");
-            System.out.println("5 - Sair");
+            System.out.println("\n#####################################################################################################");
+            System.out.println("|                                         Menu Cliente                                              |");
+            System.out.println("+ ------------------------------------------------------------------------------------------------- +");
+            System.out.println("| 1 - Registar-se como nosso cliente                                                                |");
+            System.out.println("| 2 - Ver quais os lugares de estacionamento que estão disponíveis na nossa loja física do Porto    |");
+            System.out.println("| 3 - Imprimir todos os títulos de jogos existentes na loja                                         |");
+            System.out.println("| 4 - Segundo uma editora à sua escolha, apresentaremos todas as categorias e respetivos jogos      |");
+            System.out.println("| 5 - Sair                                                                                          |");
+            System.out.println("#####################################################################################################");
             System.out.print(" \nSelecione o que pretende fazer: ");
             opcao = input.nextInt();
 
@@ -117,7 +120,7 @@ public class RitaSevera {
                     System.out.print("Insira o seu nome: ");
                     nome = input.next();
                     System.out.print("Insira o seu contacto telefónico: ");
-                    telemovel = input.nextInt();
+                    telemovel = input.next();
                     System.out.print("Insira o seu email: ");
                     email = input.next();
                     System.out.println("\nObrigada pelo seu registo na GameStart: " +  "\n" + nome + "\n" + telemovel + "\n" + email );
@@ -144,7 +147,7 @@ public class RitaSevera {
     }
     /**
      * Método para imprimir um menu
-     * @param matriz conteúdo
+     * @param matriz conteúdo contém informações das vendas da empresa (ficheiro)
      */
     public static void menuAdministrador(String[][] matriz) {
         Scanner input = new Scanner(System.in);
@@ -153,13 +156,16 @@ public class RitaSevera {
         String id, jogoMaisCaro;
 
         do {
-            System.out.println("\nMenu Administrador");
-            System.out.println("1 - Imprimir conteúdo do ficheiro");
-            System.out.println("2 - Saber a quantidade de vendas que foram executadas e o seu valor total");
-            System.out.println("3 - Saber o total do lucro");
-            System.out.println("4 - Imprimir todas as informações associadas a um cliente específico");
-            System.out.println("5 - Ver qual é o jogo mais caro e os clientes que o compraram");
-            System.out.println("6 - Sair");
+            System.out.println("\n################################################################################");
+            System.out.println("|                        Menu Administrador                                    |");
+            System.out.println("+ ---------------------------------------------------------------------------- +");
+            System.out.println("| 1 - Imprimir conteúdo do ficheiro                                            |");
+            System.out.println("| 2 - Saber a quantidade de vendas que foram executadas e o seu valor total    |");
+            System.out.println("| 3 - Saber o total do lucro                                                   |");
+            System.out.println("| 4 - Imprimir todas as informações associadas a um cliente específico         |");
+            System.out.println("| 5 - Ver qual é o jogo mais caro e os clientes que o compraram                |");
+            System.out.println("| 6 - Sair                                                                     |");
+            System.out.println("################################################################################");
             System.out.print("\nSelecione o que pretende fazer: ");
             optar = input.nextInt();
 
@@ -173,7 +179,7 @@ public class RitaSevera {
                     System.out.println("Valor total das vendas: " + totalVendas(matriz) + "€");
                     break;
                 case 3:
-                    System.out.println("Total de lucro: " + lucro(matriz) + "€");
+                    lucro(matriz);
                     break;
                 case 4:
                     System.out.println("Insira o id Cliente do qual pretende obter informações");
@@ -215,7 +221,7 @@ public class RitaSevera {
 
     /**
      * Método que imprime o título de jogos do ficheiro (sem os duplicar)
-     * @param matriz conteúdo
+     * @param matriz contém informações das vendas da empresa (ficheiro)
      */
     public static void todosJogos(String[][] matriz) {
 
@@ -223,7 +229,7 @@ public class RitaSevera {
         int contador = 0; //conta quantas vezes o jogo aparece na matriz
 
         for (int linha = 0; linha < matriz.length; linha++) { //percorre todas as linhas da matriz
-            jogoAtual = matriz[linha][7]; //a minha variável jogoAtual vai ser igual à primeir linha da coluna 7(no primeiro loop, depois aumenta para linha 2...)
+            jogoAtual = matriz[linha][7];
             for (int indice = 0; indice < linha; indice++) { //volta a percorrer as linhas para comparar o título do jogo que tem com as linhas anteriores
                 if (jogoAtual.equals(matriz[indice][7])) { // se o título for igual a outro título noutra linha, o contador aumenta
                     contador++;
@@ -236,12 +242,12 @@ public class RitaSevera {
     }
     /**
      * Método que calcula o total das vendas
-     * @param matriz conteúdo
+     * @param matriz contém informações das vendas da empresa (ficheiro)
      * @return a soma das vendas
      */
     public static double totalVendas(String[][] matriz) {
 
-        double soma = 0, valorTotal=0;
+        double soma, valorTotal=0;
 
         for (int linha = 0; linha < matriz.length; linha++ ) {
             soma = Double.parseDouble((matriz[linha][8]));
@@ -252,27 +258,26 @@ public class RitaSevera {
 
     /**
      * Método que calcula o lucro das vendas
-     * @param matriz conteúdo
-     * @return o lucro das vendas
+     * @param matriz contém informações das vendas da empresa (ficheiro)
      */
-    public static double lucro (String [][] matriz) {
+    public static void lucro (String [][] matriz) {
 
         double vendas = totalVendas(matriz); //para usar o valor que foi calculado
         double lucro;
 
         lucro = vendas*0.20;
-        return lucro;
+        System.out.println("Lucro total das vendas: " + lucro + "€");
     }
 
     /**
      * Método que encontra as informações de um cliente em específico
-     * @param matriz conteúdo
+     * @param matriz contém informações das vendas da empresa (ficheiro)
      * @param idCliente número id associado a cada cliente
      */
     public static void idCliente (String [][] matriz, String idCliente) {
 
         for (int linha = 0; linha < matriz.length; linha++){
-            if (matriz[linha][1].equals(idCliente)) { //se a linha, coluna 1 for igual ao id cliente
+            if (matriz[linha][1].equals(idCliente)) { //se a linha atual e coluna 1 for igual ao id cliente (introduzido pelo utilizador)
                 System.out.println(matriz[linha][2] + " " +  matriz[linha][3] + " " + matriz[linha][4]); //imprime o nome, contacto e email
                 break;// faço break para ele não imprimir as informações várias vezes
             }
@@ -281,7 +286,7 @@ public class RitaSevera {
 
     /**
      * Método que encontra o jogo mais cero
-     * @param matriz conteúdo
+     * @param matriz contém informações das vendas da empresa (ficheiro)
      * @return o nome do jogo mais caro
      */
     public static String jogoMaisCaro (String [][] matriz){
@@ -301,19 +306,28 @@ public class RitaSevera {
 
     /**
      * Método que encontra os clientes que compraram o jogo mais caro
-     * @param matriz conteúdo
+     * @param matriz contém informações das vendas da empresa (ficheiro)
      * @param jogoCaro jogo que os clientes compraram
      */
 
     public static void clientesCompraram (String [][] matriz, String jogoCaro) {
 
         for (int linha = 0; linha < matriz.length; linha ++){
-            if (matriz[linha][7].equals(jogoCaro)) { //se a linha, coluna 7 for igual ao jogo mais caro
+            if (matriz[linha][7].equals(jogoCaro)) { //se a linha atual e coluna 7 (nome do jogo) for igual ao jogo mais caro
                 System.out.println(matriz[linha][2]); //imprimo o nome do cliente
             }
         }
-
     }
+
+    /*public static void editora (String [][] matriz, String editora) {
+
+        for (int linha = 0; linha < matriz.length; linha++){
+            if (matriz[linha][5].equals(editora)) {
+                System.out.println(matriz[linha][6] + " " + matriz[linha][7]);
+            }
+        }
+    }*/
+
     public static void main(String[] args) throws FileNotFoundException {
         Scanner input = new Scanner(System.in);
         String[][] matriz = lerFicheiroMatriz("FicheiroProjeto/GameStart_V2.csv");
@@ -322,7 +336,13 @@ public class RitaSevera {
         int password = 12345, passwordUtilizador, contador = 0;
 
         do {
-            System.out.println("\nBem-vindo à GameStart! Selecione o tipo de utilizador: 1 - Administrador || 2 - Cliente ");
+            System.out.println("\n############################################################################################");
+            System.out.println("|                           Bem-vindo à GameStart!                                         |");
+            System.out.println("+ ---------------------------------------------------------------------------------------- +");
+            System.out.println("| 1 - Administrador                                                                        |");
+            System.out.println("| 2 - Cliente                                                                              |");
+            System.out.println("############################################################################################");
+            System.out.print("\nSelecione o tipo de utilizador: ");
             escolha = input.nextInt();
 
             switch (escolha){
