@@ -12,9 +12,9 @@ public class Exercicio03 {
     public static void main(String[] args) throws FileNotFoundException { //Definição do método MAIN
 
         //Vou abrir o ficheiro que quero
-        File file = new File("Ficheiros/exercicio_03_Alternativa01.txt");
+        File file = new File("aulas/Ficheiros/exercicio_03_Alternativa01.txt");
 
-        File ficheiro = new File("Ficheiros/exercicio_03_cópia.txt"); //máquina de ler ficheiro
+        File ficheiro = new File("aulas/Ficheiros/exercicio_03_cópia.txt"); //máquina de ler ficheiro
 
         Scanner sc = new Scanner(file); //o tipo
         PrintWriter escrever = new PrintWriter(ficheiro);

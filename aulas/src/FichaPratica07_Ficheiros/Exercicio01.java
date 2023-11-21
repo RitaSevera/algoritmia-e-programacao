@@ -8,7 +8,7 @@ public class Exercicio01 {
     public static void main(String[] args) throws FileNotFoundException {
 
         //Vou abrir o ficheiro que quero
-        File file = new File("Ficheiros/exercicio_01.txt");
+        File file = new File("aulas/Ficheiros/exercicio_01.txt");
 
         Scanner sc = new Scanner(file);
 

@@ -9,7 +9,7 @@ public class Exercicio02 {
 
         String conteudoFicheiro = "Que engraçado";
 
-        File file = new File("Ficheiros/exercicio_02.txt"); //máquina de ler ficheiro
+        File file = new File("aulas/Ficheiros/exercicio_02.txt"); //máquina de ler ficheiro
         PrintWriter escrever = new PrintWriter(file); //máquina de escrever
 
         escrever.println(conteudoFicheiro);

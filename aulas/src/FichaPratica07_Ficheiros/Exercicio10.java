@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Exercicio10 {
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("Ficheiros/exercicio_10.csv"); //trazer ficheiro para o programa
+        File file = new File("aulas/Ficheiros/exercicio_10.csv"); //trazer ficheiro para o programa
         Scanner sc = new Scanner(file);
 
         String linha = sc.nextLine(); //grava a linha do cabeçalho, para depois já não entrar no ciclo (quis avançar esta à frente)

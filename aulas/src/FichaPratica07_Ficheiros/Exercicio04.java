@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Exercicio04 {
     public static void main(String[] args) throws FileNotFoundException {
-        File file = new File("Ficheiros/exercicio_04.csv");
+        File file = new File("aulas/Ficheiros/exercicio_04.csv");
 
         Scanner sc = new Scanner(file);
 
