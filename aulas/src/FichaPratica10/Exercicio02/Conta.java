@@ -13,20 +13,14 @@ public class Conta {
         this.saldo = saldo;
         this.titular = titular;
     }
-    /*public double margemEmprestimo () {
-        double margem;
-        margem = this.saldo * this.margemEmprestimo;
-        return margem;
-    }*/
-
     public void pedirEmprestimo(int valorPretendido) {
 
         if (valorPretendido > this.saldo * this.margemEmprestimo && this.valorDivida > 0) {
-            System.out.println("Empréstimo impedido");
+            System.out.println("Empréstimo de " + valorPretendido + " impedido");
         } else {
             this.saldo = this.saldo + valorPretendido;
             this.valorDivida+=valorPretendido;
-            System.out.println("Empréstimo permitido");
+            System.out.println("Empréstimo de " + valorPretendido + " permitido");
         }
     }
 

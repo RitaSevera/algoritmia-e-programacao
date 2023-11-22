@@ -15,17 +15,17 @@ public class Animal {
         this.alimentacao = alimentacao;
     }
 
-    public void comer (double peso, String alimento) {
-        for (int linha = 0; linha < this.alimentacao.length; linha++){
+    public void comer (double pesoAlimento, String alimento) {
+        for (int linha = 0; linha < this.alimentacao.length; linha++){ //iterar array e comparar todos os alimentos
             if (alimento.equals(this.alimentacao[linha])){
-                System.out.println("O animal comeu");
-                this.peso = this.peso + peso/100;
+                System.out.println("O " + this.nome + " comeu " + alimento);
+                this.peso = this.peso + pesoAlimento/1000;
                 System.out.println(this.peso);
-                System.out.println("O animal recusou essa comida");
-                System.out.println(this.peso);
-                return;
-            }
+                return; //encontrou, comeu e acaba o ciclo
+            }// não tem else porque senão só liga a posição que eu lhe dava (ex: eu dava arroz ao tobby, arroz não é igual à posição 0 então se tivesse else dizia logo que o tobby não queria, então sem else ele percorre tudo
         }
+        System.out.println("O " + this.nome + " recusou " + alimento);
+        System.out.println(this.peso);
     }
     public void exibirDetalhes () {
         System.out.println("Nome - " + this.nome);
