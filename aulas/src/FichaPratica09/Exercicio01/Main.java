@@ -9,7 +9,7 @@ public class Main {
         System.out.println("Nome: " + rita.getNome());//sempre que quero ter informação uso get
         System.out.println("Idade: " + rita.getIdade());
         System.out.println("Altura: " + rita.getAltura());
-
+        System.out.println();
         System.out.println("Nome: " + nuno.getNome());
         System.out.println("Idade: " + nuno.getIdade());
         System.out.println("Altura: " + nuno.getAltura());
