@@ -1,5 +1,5 @@
 package FichaPratica10.Exercicio01;
 
 public enum tipoCombustivel {
-    GASOLINA, DIESEL, GPL
+    GASOLINA, DIESEL, GPL, ELETRICO
 }
