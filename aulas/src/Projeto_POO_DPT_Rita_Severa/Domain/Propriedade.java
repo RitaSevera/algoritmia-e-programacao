@@ -1,0 +1,15 @@
+package Projeto_POO_DPT_Rita_Severa.Domain;
+
+public class Propriedade {
+    private String nome;
+    private double custo;
+    private int estatuto;
+
+    public Propriedade(String nome) {
+        this.nome = nome;
+    }
+
+    public void exibirDetalhes (){
+        System.out.println("Nome - " + this.nome + "Custo - " + this.custo +"Estatuto - " + this.estatuto);
+    }
+}

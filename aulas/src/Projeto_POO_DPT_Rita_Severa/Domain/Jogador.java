@@ -36,12 +36,12 @@ public class Jogador extends Pessoa{
         System.out.println("A sua necessidade de se divertir - " + this.necessidadeSocial);
         System.out.println("O seu estatuto - " + this.estatuto);
         System.out.println("O seu nível de formação - " + this.educacao);
-        //for (int linha = 0; linha < this.participantes.size(); linha++) {
-        //            Pessoa pessoaAtual = this.participantes.get(linha);
-        //            System.out.print("Participante " + (linha+1) + " - ");
-        //            pessoaAtual.exibirDetalhes();
-        //        }
         System.out.println("As suas propriedades - " + this.propriedades);
+        for (int linha = 0; linha < this.propriedades.size(); linha++){
+            Propriedade propriedadeAtual = this.propriedades.get(linha);
+            System.out.println("Propriedades " + (linha+1) + " - ");
+            propriedadeAtual.exibirDetalhes();
+        }
         System.out.println("A sua linda família - " + this.familia);
     }
 }
