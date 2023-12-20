@@ -1,8 +1,8 @@
-tipo;nome;custo;estatuto;lotacaoMax;marca;modelo;formal
-Propriedade;Quinta Tio Manel;19000;55;10;0;0;0
-Propriedade;Vivenda Lili Caneças;68500;75;5;0;0;0
-Propriedade;Hogwarts;2000000;900;100;0;0;0
-Propriedade;Monte do Goucha;1500000;500;50;0;0;0
+ï»¿tipo;nome;custo;estatuto;lotacaoMaxima;marca;modelo;formal
+Propriedade;Quinta Tio Manel;25000;55;10;0;0;0
+Propriedade;Vivenda Lili Canecas;19500;75;7;0;0;0
+Propriedade;Hogwarts;40000;700;15;0;0;0
+Propriedade;Monte do Goucha;300000;1000;30;0;0;0
 Propriedade;Central Perk;20000;700;6;0;0;0
 Propriedade;Casa BigBrother;100000;30;7;0;0;0
 Propriedade;T2 de telheiras;50000;20;4;0;0;0
@@ -20,12 +20,12 @@ Veiculo;Mazda;890954;720;0;Mazda;cx30;0
 Veiculo;BMW;876679;650;0;BMW;a1;0
 Veiculo;Audi;34989;300;0;Audi;X6;0
 AcessorioModa;Oculos de Sol;300;20;0;Gucci;0;true
-AcessorioModa;Fato;2500;50;0;Hugo Boss;0;true
 AcessorioModa;Bone do Boavista;5;1;0;Made in China;0;false
+AcessorioModa;Fato;2500;50;0;Hugo Boss;0;true
 AcessorioModa;Sapatilhas de Corrida;50;3;0;Nikw;0;false
 AcessorioModa;Botas da Tina;250;300;0;CristinaColection;Cowboy;false
-AcessorioModa;Vestido Lili;200;10;0;Lili;Caneças;true
+AcessorioModa;Vestido Lili;200;10;0;Lili;CaneÃ§as;true
 AcessorioModa;Brincos;10;3;0;Parfois;Ouro;true
 AcessorioModa;Anel;1500;100;0;Swarovski;Noivado;true
-AcessorioModa;Calças;20;2;0;Levis;Pesadas;false
-AcessorioModa;Camisola;40;7;0;El Corte;Inglês;false
+AcessorioModa;CalÃ§as;20;2;0;Levis;Pesadas;false
+AcessorioModa;Camisola;40;7;0;El Corte;InglÃªs;false

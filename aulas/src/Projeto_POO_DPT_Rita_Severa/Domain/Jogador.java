@@ -4,24 +4,18 @@ import java.util.ArrayList;
 
 public class Jogador extends Pessoa{
     private Objetivo objetivoVida;
-    private Profissao profissao;
+    private Profissao profissao = null;
     private int necessidadeDormir = 100;
     private int necessidadeRefeicao = 100;
     private int necessidadeSocial = 100;
-    private int estatuto = 0;
-    private int educacao = 0;
-    private ArrayList<Propriedade> propriedades;
-    private ArrayList<NPC> familia;
+    private int estatuto = 0; //será a soma de todos os estatutos das suas propriedades
+    private int educacao = 0; //Nível de formação
+    private ArrayList<Propriedade> propriedades; //aqui estão listadas todas as propriedades
+    private ArrayList<NPC> familia; //será a família do meu jogador
 
-    public Jogador(String nome, double dinheiro, Objetivo objetivoVida, Profissao profissao, int necessidadeDormir, int necessidadeRefeicao, int necessidadeSocial, int estatuto, int educacao) {
-        super(nome, dinheiro);
+    public Jogador(String nome, Objetivo objetivoVida) {
+        super(nome);
         this.objetivoVida = objetivoVida;
-        this.profissao = profissao;
-        this.necessidadeDormir = necessidadeDormir;
-        this.necessidadeRefeicao = necessidadeRefeicao;
-        this.necessidadeSocial = necessidadeSocial;
-        this.estatuto = estatuto;
-        this.educacao = educacao;
         this.propriedades = new ArrayList<>();
         this.familia = new ArrayList<>();
     }

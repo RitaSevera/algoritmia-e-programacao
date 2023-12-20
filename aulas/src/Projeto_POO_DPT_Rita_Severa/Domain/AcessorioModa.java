@@ -9,4 +9,12 @@ public class AcessorioModa extends Propriedade{
         this.marca = marca;
         this.formal = formal;
     }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public boolean isFormal() {
+        return formal;
+    }
 }

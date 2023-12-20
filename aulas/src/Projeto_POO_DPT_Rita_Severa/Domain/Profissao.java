@@ -14,6 +14,13 @@ public class Profissao {
         this.estatuto = estatuto;
         this.nivelMinimoEducacao = nivelMinimoEducacao;
     }
+    Profissao chefCozinha = new Profissao("Chef de cozinha", 80, false, 300, 4);
+    Profissao massagista = new Profissao("Massagista", 50, false, 100, 4);
+    Profissao lojista = new Profissao("Lojista", 40, false, 90, 4);
+    Profissao empregadoMesa = new Profissao("Empregado de mesa", 20, false, 50, 3);
+    Profissao paleontologo = new Profissao("Paleontólogo", 150, true, 500, 7);
+    Profissao analistaDados = new Profissao("Analista de Dados", 200, true, 700, 7);
+    Profissao ator = new Profissao("Ator", 30, false, 70, 4);
 
     public void exibirDetalhes () {
         System.out.println("Nome - " + this.nome);

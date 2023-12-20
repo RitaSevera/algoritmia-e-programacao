@@ -4,9 +4,8 @@ public abstract class Pessoa {
     String nome;
     double dinheiro = 0;
 
-    public Pessoa(String nome, double dinheiro) {
+    public Pessoa(String nome) {
         this.nome = nome;
-        this.dinheiro = dinheiro;
     }
 
     public String getNome() {

@@ -12,6 +12,18 @@ public class Propriedade {
     }
 
     public void exibirDetalhes (){
-        System.out.println("Nome - " + this.nome + "Custo - " + this.custo +"Estatuto - " + this.estatuto);
+        System.out.println("Nome - " + this.nome + ";" + " Custo - " + this.custo + ";" + " Estatuto - " + this.estatuto);
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public double getCusto() {
+        return custo;
+    }
+
+    public int getEstatuto() {
+        return estatuto;
     }
 }

@@ -1,6 +1,9 @@
 package Projeto_POO_DPT_Rita_Severa.View;
 
 import Projeto_POO_DPT_Rita_Severa.Controllers.SimsController;
+import Projeto_POO_DPT_Rita_Severa.Domain.Jogador;
+import Projeto_POO_DPT_Rita_Severa.Domain.Pessoa;
+import Projeto_POO_DPT_Rita_Severa.Domain.Shopping;
 
 import java.io.FileNotFoundException;
 import java.util.Scanner;
@@ -15,19 +18,11 @@ public class SimsView {
 
 
         int opcao = 0;
-        do {
             System.out.println("###############################################################");
-            System.out.println("|               Bem-vinda ao melhor jogo da sua vida          |");
-            System.out.println("|                  1 - Criar a sua personagem                 |");
+            System.out.println("|                     Bem-vinda ao Sims Friends               |");
+            System.out.println("|                     Crie a sua personagem                   |");
             System.out.println("###############################################################");
-            opcao = input.nextInt();
-
-            switch (opcao) {
-                case 1:
-                    SimsController.criarPersonagem(input);
-                    break;
-            }
-        } while (opcao !=1);
+            SimsController.criarPersonagem();
 
         do {
             System.out.println("###############################################################");
@@ -47,8 +42,8 @@ public class SimsView {
 
             switch (opcao) {
                 case 1:
-
-
+                    Shopping shopping = new Shopping();
+                    shopping.comprar();
                     break;
                 case 2:
 
