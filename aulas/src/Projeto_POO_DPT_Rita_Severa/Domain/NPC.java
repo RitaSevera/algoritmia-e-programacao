@@ -7,4 +7,10 @@ public class NPC extends Pessoa{
         super(nome, dinheiro);
         this.estatuto = estatuto;
     }
+
+    public void exibirDetalhes () {
+        System.out.println("Nome - " + this.nome);
+        System.out.println("Dinheiro - " + this.dinheiro);
+        System.out.println("Estatuto - " + this.estatuto);
+    }
 }

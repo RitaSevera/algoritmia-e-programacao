@@ -1,55 +1,58 @@
 package Projeto_POO_DPT_Rita_Severa.Domain;
 
+import Projeto_POO_DPT_Rita_Severa.Model.PropriedadeRepos;
+
+import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Random;
+import java.util.Scanner;
 
 public class Shopping {
-    private String tipo;
-    private String nome;
-    private int estatuto;
-    private int lotacaoMaxima;
-    private String marca;
-    private String modelo;
-    private boolean formal;
+    private ArrayList<Propriedade> itensComprar;
 
-    public Shopping(String tipo, String nome, int estatuto, int lotacaoMaxima, String marca, String modelo, boolean formal) {
-        this.tipo = tipo;
-        this.nome = nome;
-        this.estatuto = estatuto;
-        this.lotacaoMaxima = lotacaoMaxima;
-        this.marca = marca;
-        this.modelo = modelo;
-        this.formal = formal;
+    public Shopping() throws FileNotFoundException {
+
+        PropriedadeRepos propriedadeRepository = new PropriedadeRepos("aulas/Projeto_POO_DPT/CoisasShopping.csv");
+
+        this.itensComprar = propriedadeRepository.getPropriedades();
     }
 
-    public String getTipo() {
-        return tipo;
+    public ArrayList<Propriedade> getItensComprar() {
+        return itensComprar;
     }
+    public void comprar (Pessoa jogador) {
+        Scanner input = new Scanner(System.in);
+        int seccao = 0;
+        Random random = new Random();
 
-    public String getNome() {
-        return nome;
-    }
+        System.out.println("###############################################################");
+        System.out.println("|                 Bem-vinda ao Shopping Severa                |");
+        System.out.println("|                          1 - Moda                           |");
+        System.out.println("|                          2 - Imobiliária                    |");
+        System.out.println("|                          3 - Stand                          |");
+        System.out.println("|                          4 - Sair do Shopping               |");
+        System.out.println("|          Escolha a secção a que pretende aceder -           |");
+        seccao = input.nextInt();
 
-    public int getEstatuto() {
-        return estatuto;
-    }
+        switch (seccao) {
+            case 1:
+                System.out.println("Artigos de moda disponíveis");
+                ArrayList<Integer> arrayAleatorio = new ArrayList<>();
 
-    public int getLotacaoMaxima() {
-        return lotacaoMaxima;
-    }
+                while (arrayAleatorio.size() < 10) {
+                    int indexAleatorio = random.nextInt(0, this.itensComprar.size());
 
-    public String getMarca() {
-        return marca;
-    }
-
-    public String getModelo() {
-        return modelo;
-    }
-
-    public boolean isFormal() {
-        return formal;
-    }
-
-    public void exibirDetalhesShopping (){
-        System.out.println(this.tipo + this.nome + this.estatuto + this.lotacaoMaxima + this.marca + this.modelo + this.formal);
+                    if (arrayAleatorio.size() == 0) {
+                        arrayAleatorio.add(indexAleatorio);
+                    }
+                    if (!arrayAleatorio.contains(indexAleatorio)) {
+                        arrayAleatorio.add(indexAleatorio);
+                    }
+                }
+                for (int linha = 0 ; linha < arrayAleatorio.size(); linha++) {
+                    System.out.println("Artigos de moda disponíveis" + linha + " - ");
+                    this.itensComprar.get(arrayAleatorio.get(linha)).exibirDetalhes();
+                }
+        }
     }
 }

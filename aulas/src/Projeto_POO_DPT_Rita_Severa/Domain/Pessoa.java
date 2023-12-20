@@ -8,4 +8,12 @@ public abstract class Pessoa {
         this.nome = nome;
         this.dinheiro = dinheiro;
     }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public double getDinheiro() {
+        return dinheiro;
+    }
 }

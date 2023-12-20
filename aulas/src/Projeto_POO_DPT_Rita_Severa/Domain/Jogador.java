@@ -26,6 +26,43 @@ public class Jogador extends Pessoa{
         this.familia = new ArrayList<>();
     }
 
+    public Objetivo getObjetivoVida() {
+        return objetivoVida;
+    }
+
+    public Profissao getProfissao() {
+        return profissao;
+    }
+
+    public int getNecessidadeDormir() {
+        return necessidadeDormir;
+    }
+
+    public int getNecessidadeRefeicao() {
+        return necessidadeRefeicao;
+    }
+
+    public int getNecessidadeSocial() {
+        return necessidadeSocial;
+    }
+
+    public int getEstatuto() {
+        return estatuto;
+    }
+
+    public int getEducacao() {
+        return educacao;
+    }
+
+    public ArrayList<Propriedade> getPropriedades() {
+        return propriedades;
+    }
+
+    public ArrayList<NPC> getFamilia() {
+        return familia;
+    }
+
+
     public void exibirDetalhes() {
         System.out.println("Nome - " + this.nome);
         System.out.println("Saldo da sua conta - " + this.dinheiro);
@@ -43,5 +80,8 @@ public class Jogador extends Pessoa{
             propriedadeAtual.exibirDetalhes();
         }
         System.out.println("A sua linda família - " + this.familia);
+        for (NPC npcAtual : familia) {
+            npcAtual.exibirDetalhes();
+        }
     }
 }

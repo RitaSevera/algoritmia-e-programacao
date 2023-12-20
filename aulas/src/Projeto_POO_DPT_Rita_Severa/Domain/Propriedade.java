@@ -5,8 +5,10 @@ public class Propriedade {
     private double custo;
     private int estatuto;
 
-    public Propriedade(String nome) {
+    public Propriedade(String nome, double custo, int estatuto) {
         this.nome = nome;
+        this.custo = custo;
+        this.estatuto = estatuto;
     }
 
     public void exibirDetalhes (){
