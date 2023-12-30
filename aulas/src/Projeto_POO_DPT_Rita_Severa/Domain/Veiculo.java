@@ -9,4 +9,9 @@ public class Veiculo extends Propriedade{
         this.marca = marca;
         this.modelo = modelo;
     }
+    public void exibirDetalhes(){
+        super.exibirDetalhes();
+        System.out.println("Marca - " + this.marca);
+        System.out.println("Modelo - " + this.modelo);
+    }
 }

@@ -56,6 +56,46 @@ public class Jogador extends Pessoa{
         return familia;
     }
 
+    public void setObjetivoVida(Objetivo objetivoVida) {
+        this.objetivoVida = objetivoVida;
+    }
+
+    public void setProfissao(Profissao profissao) {
+        this.profissao = profissao;
+    }
+
+    public void setNecessidadeDormir(int necessidadeDormir) {
+        this.necessidadeDormir = necessidadeDormir;
+    }
+
+    public void setNecessidadeRefeicao(int necessidadeRefeicao) {
+        this.necessidadeRefeicao = necessidadeRefeicao;
+    }
+
+    public void setNecessidadeSocial(int necessidadeSocial) {
+        this.necessidadeSocial = necessidadeSocial;
+    }
+
+    public void setEstatuto(int estatuto) {
+        this.estatuto = estatuto;
+    }
+
+    public void setEducacao(int educacao) {
+        this.educacao = educacao;
+    }
+
+    public void setPropriedades(ArrayList<Propriedade> propriedades) {
+        this.propriedades = propriedades;
+    }
+
+    public void setFamilia(ArrayList<NPC> familia) {
+        this.familia = familia;
+    }
+
+    public void addPropriedades (Propriedade propriedadeNova){
+        this.propriedades.add(propriedadeNova);
+    }
+
 
     public void exibirDetalhes() {
         System.out.println("Nome - " + this.nome);

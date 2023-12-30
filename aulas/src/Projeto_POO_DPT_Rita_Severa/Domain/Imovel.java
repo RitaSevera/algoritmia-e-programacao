@@ -7,4 +7,8 @@ public class Imovel extends Propriedade{
         super(nome, custo, estatuto);
         this.capacidadePessoas = capacidadePessoas;
     }
+    public void exibirDetalhes(){
+        super.exibirDetalhes();
+        System.out.println("Lotação máxima - " + this.capacidadePessoas);
+    }
 }

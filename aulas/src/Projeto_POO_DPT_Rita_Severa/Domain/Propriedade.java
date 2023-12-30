@@ -1,9 +1,9 @@
 package Projeto_POO_DPT_Rita_Severa.Domain;
 
 public class Propriedade {
-    private String nome;
-    private double custo;
-    private int estatuto;
+    protected String nome;
+    protected double custo;
+    protected int estatuto;
 
     public Propriedade(String nome, double custo, int estatuto) {
         this.nome = nome;

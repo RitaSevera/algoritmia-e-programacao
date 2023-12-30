@@ -1,8 +1,8 @@
 package Projeto_POO_DPT_Rita_Severa.Domain;
 
 public abstract class Pessoa {
-    String nome;
-    double dinheiro = 0;
+    protected String nome;
+    protected double dinheiro = 0;
 
     public Pessoa(String nome) {
         this.nome = nome;
@@ -14,5 +14,9 @@ public abstract class Pessoa {
 
     public double getDinheiro() {
         return dinheiro;
+    }
+
+    public void setDinheiro(double dinheiro) {
+        this.dinheiro = dinheiro;
     }
 }

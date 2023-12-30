@@ -17,4 +17,9 @@ public class AcessorioModa extends Propriedade{
     public boolean isFormal() {
         return formal;
     }
+    public void exibirDetalhes() {
+        super.exibirDetalhes();
+        System.out.println("Marca - " + this.marca);
+        System.out.println("Formal - " + this.formal);
+    }
 }
