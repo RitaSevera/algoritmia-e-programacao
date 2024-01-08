@@ -1,6 +1,9 @@
 package Projeto_POO_DPT_Rita_Severa.Tools;
 
-import Projeto_POO_DPT_Rita_Severa.Domain.*;
+import Projeto_POO_DPT_Rita_Severa.Model.AcessorioModa;
+import Projeto_POO_DPT_Rita_Severa.Model.Imovel;
+import Projeto_POO_DPT_Rita_Severa.Model.Propriedade;
+import Projeto_POO_DPT_Rita_Severa.Model.Veiculo;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -13,16 +16,22 @@ public class CSVReader {
     public CSVReader(String caminho) {
         this.caminho = caminho;
     }
+
+    /**
+     * Leio o ficheiro para um arrayList
+     * @return o arrayList
+     * @throws FileNotFoundException
+     */
     public ArrayList<Propriedade> readCSVToRepos () throws FileNotFoundException {
         File ficheiro = new File(this.caminho);
         Scanner sc = new Scanner(ficheiro);
 
-        String linha = sc.nextLine();
+        String linha = sc.nextLine(); //tiro a linha do cabeçalho
         ArrayList<Propriedade> arrayCompras = new ArrayList<>();
 
         while (sc.hasNextLine()){
             linha = sc.nextLine();
-            String[] linhaDividida = linha.split(";");
+            String[] linhaDividida = linha.split(";");//divir pelo ;
 
             String tipo = linhaDividida[0];
             String nome = linhaDividida[1];
@@ -51,4 +60,3 @@ public class CSVReader {
         return arrayCompras;
     }
 }
-
